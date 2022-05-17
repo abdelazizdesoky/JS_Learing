@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS
+    </title>
+</head>
+<body>
+
+
+
+
+
+</body>
+<script>
+
+
+
+let num = 28807201301315
+console.log (num)
+
+if (Number.isInteger(num)){   //check number
+
+   num =  num.toString()      // to string 
+   
+
+    if (num.length === 14){  //check length 14 number 
+
+    num = num.split("")   // to arrray
+
+   
+//---------القرن الميلادى --------
+    switch (+num[0]) {
+
+         case 1:
+            console.log("القرن التاسع عشر ")
+            break;
+
+         case 2:
+            console.log("القرن العشرين ")
+            break;
+
+         case 3:
+            console.log("القرن الحادى والعشرين ")
+            break;
+
+         default:
+            console.log(" لا يوجد   ")
+            break;
+    
+    }
+
+    //-----تاريخ الميلاد ---------
+
+    let numYear = +(num[1]+num[2])
+    let numMonth = +(num[3]+num[4])
+    let numDay = +(num[5]+num[6])
+
+    d = (new Date(numYear, numMonth, numDay,0,0))
+
+    let options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+
+    console.log(d.toLocaleString('en-US',options))
+
+
+    //--------المحافظة الميلاد ----------
+
+    switch (num[7]+num[8]) {
+
+case "01":
+    console.log("القاهرة ")
+    break;
+
+    case "02":
+    console.log("الإسكندرية  ")
+    break;
+
+    case "03":
+    console.log(" بورسعيد ")
+    break;
+
+    case "04":
+    console.log("السويس  ")
+    break;
+
+    case "11":
+    console.log(" دمياط ")
+    break;
+
+    case "12":
+    console.log(" الدقهلية")
+    break;
+
+    case "13":
+    console.log("الشرقية  ")
+    break;
+
+    case "14":
+    console.log("القليوبية  ")
+    break;
+
+    case "15":
+    console.log("كفر الشيخ")
+    break;
+
+    case "16":
+    console.log("الغربية")
+    break;
+
+    case "17":
+    console.log("المنوفية ")
+    break;
+
+    case "18":
+    console.log("البحيرة")
+    break;
+
+    case "19":
+    console.log("الإسماعيلية ")
+    break;
+
+    case "21":
+    console.log("الجيزة ")
+    break;
+
+    case "22":
+    console.log("بني سويف")
+    break;
+
+    case "23":
+    console.log("الفيوم ")
+    break;
+
+    case "24":
+    console.log("المنيا ")
+    break;
+
+    case "25":
+    console.log("أسيوط ")
+    break;
+
+    case "26":
+    console.log("سوهاج ")
+    break;
+
+    case "27":
+    console.log("قنا ")
+    break;
+
+    case "28":
+    console.log("أسوان ")
+    break;
+    
+    case "29":
+    console.log("الأقصر ")
+    break;
+
+    case "31":
+    console.log("البحر الأحمر")
+    break;
+
+    case "32":
+    console.log("الوادي الجديد")
+    break;
+
+    case "33":
+    console.log("مطروح ")
+    break;
+    
+    case "34":
+    console.log("شمال سيناء")
+    break;
+
+    case "35":
+    console.log("جنوب سيناء")
+    break;
+
+    case "88":
+    console.log("خارج جمهورية مصر العربية")
+    break;
+
+   
+
+
+}
+
+    console.log("  تسلسل الشخص على الكمبيوتر بين المواليد في يوم ميلاده : "+num[9]+num[10]+num[11]+num[12])
+  
+
+    mail = ["1","3","5","7","9"]  //check gender 
+    
+    if (num[12]!=="0"){
+            if(mail.includes(num[12])){
+                console.log("ذكر ")
+            }else{
+                console.log("انثى ")
+            }
+        }else{
+            console.log("غير محدد ")
+        }   
+
+      
+
+
+    }else{
+        console.log("not 14 number")
+    }
+    
+}else{
+    console.log("not number")
+}
+
+
+
+    </script>
+</html> 
