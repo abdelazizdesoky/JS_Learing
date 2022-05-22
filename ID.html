@@ -9,22 +9,19 @@
 </head>
 <body>
 
-
-
-
+    <input type="text" placeholder="Type ID..." id="myInput">
+    <button type="button" onclick="getInputValue();">Get Info</button> 
 
 </body>
 <script>
 
+function getInputValue(){
+            // Selecting the input element and get its value 
+ let  num = document.getElementById("myInput").value;
+       
+ document.write(`<h2> ${num} </h2>`);
 
 
-let num = 28807201301315
-console.log (num)
-
-if (Number.isInteger(num)){   //check number
-
-   num =  num.toString()      // to string 
-   
 
     if (num.length === 14){  //check length 14 number 
 
@@ -32,22 +29,23 @@ if (Number.isInteger(num)){   //check number
 
    
 //---------القرن الميلادى --------
+
     switch (+num[0]) {
 
          case 1:
-            console.log("القرن التاسع عشر ")
+            document.write('<h4>القرن التاسع عشر </h4>')
             break;
 
          case 2:
-            console.log("القرن العشرين ")
+            document.write('<h4>القرن العشرين </h4>')
             break;
 
          case 3:
-            console.log("القرن الحادى والعشرين ")
+            document.write('<h4> القرن الحادى والعشرين </h4>')
             break;
 
          default:
-            console.log(" لا يوجد   ")
+           document.write('<h4> لايوجد </h4>')
             break;
     
     }
@@ -62,7 +60,9 @@ if (Number.isInteger(num)){   //check number
 
     let options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
 
-    console.log(d.toLocaleString('en-US',options))
+    youDate = d.toLocaleString('en-US',options);
+    
+    document.write(`<h4>${youDate}<h4>`);
 
 
     //--------المحافظة الميلاد ----------
@@ -70,149 +70,151 @@ if (Number.isInteger(num)){   //check number
     switch (num[7]+num[8]) {
 
 case "01":
-    console.log("القاهرة ")
+     document.write('<h4> القاهرة </h4>');
     break;
 
     case "02":
-    console.log("الإسكندرية  ")
+     document.write('<h4> الإسكندرية </h4>');
     break;
 
     case "03":
-    console.log(" بورسعيد ")
+     document.write('<h4> بورسعيد </h4>');
     break;
 
     case "04":
-    console.log("السويس  ")
+     document.write('<h4> السويس </h4>');
     break;
 
     case "11":
-    console.log(" دمياط ")
+     document.write('<h4> دمياط </h4>');
     break;
 
     case "12":
-    console.log(" الدقهلية")
+     document.write('<h4> الدقهلية </h4>');
     break;
 
     case "13":
-    console.log("الشرقية  ")
+    document.write('<h4> الشرقية </h4>');
     break;
 
     case "14":
-    console.log("القليوبية  ")
+     document.write('<h4> القليوبية </h4>');
     break;
 
     case "15":
-    console.log("كفر الشيخ")
+     document.write('<h4> كفر الشيخ </h4>');
     break;
 
     case "16":
-    console.log("الغربية")
+    document.write('<h4> الغربية </h4>');
     break;
 
     case "17":
-    console.log("المنوفية ")
+     document.write('<h4> المنوفية </h4>');
     break;
 
     case "18":
-    console.log("البحيرة")
+    document.write('<h4> البحيرة </h4>');
     break;
 
     case "19":
-    console.log("الإسماعيلية ")
+     document.write('<h4> الإسماعيلية </h4>');
     break;
 
     case "21":
-    console.log("الجيزة ")
+     document.write('<h4> الجيزة </h4>');
     break;
 
     case "22":
-    console.log("بني سويف")
+     document.write('<h4> بني سويف </h4>');
     break;
 
     case "23":
-    console.log("الفيوم ")
+     document.write('<h4> الفيوم </h4>');
     break;
 
     case "24":
-    console.log("المنيا ")
+    document.write('<h4> المنيا </h4>');
     break;
 
     case "25":
-    console.log("أسيوط ")
+     document.write('<h4> أسيوط </h4>');
     break;
 
     case "26":
-    console.log("سوهاج ")
+    document.write('<h4> سوهاج </h4>');
     break;
 
     case "27":
-    console.log("قنا ")
+     document.write('<h4> قنا </h4>');
     break;
 
     case "28":
-    console.log("أسوان ")
+     document.write('<h4> أسوان </h4>');
     break;
     
     case "29":
-    console.log("الأقصر ")
+     document.write('<h4> الأقصر </h4>');
     break;
 
     case "31":
-    console.log("البحر الأحمر")
+     document.write('<h4> البحرالأحمر </h4>');
     break;
 
     case "32":
-    console.log("الوادي الجديد")
+     document.write('<h4> الوادي الجديد </h4>');
     break;
 
     case "33":
-    console.log("مطروح ")
+    document.write('<h4> مطروح </h4>');
     break;
     
     case "34":
-    console.log("شمال سيناء")
+     document.write('<h4> شمال سيناء </h4>');
     break;
 
     case "35":
-    console.log("جنوب سيناء")
+     document.write('<h4> جنوب سيناء </h4>');
     break;
 
     case "88":
-    console.log("خارج جمهورية مصر العربية")
+    document.write('<h4> خارج جمهورية مصر العربية </h4>');
+    break;
+
+    default:
+    document.write('<h4> غير صحيح </h4>');
     break;
 
    
 
 
 }
+numAll= +num[9]+num[10]+num[11]+num[12]
 
-    console.log("  تسلسل الشخص على الكمبيوتر بين المواليد في يوم ميلاده : "+num[9]+num[10]+num[11]+num[12])
+ document.write(`<h4>  تسلسل الشخص على الكمبيوتر بين المواليد في يوم ميلاده : ${numAll}</h4>`)
   
 
     mail = ["1","3","5","7","9"]  //check gender 
     
     if (num[12]!=="0"){
             if(mail.includes(num[12])){
-                console.log("ذكر ")
+                document.write("<h4>ذكر </h4>")
             }else{
-                console.log("انثى ")
+                document.write("<h4>انثى</h4> ")
             }
         }else{
-            console.log("غير محدد ")
+            document.write("<h4>غير محدد </h4>")
         }   
 
       
 
 
     }else{
-        console.log("not 14 number")
+        document.write("Not 14 number or Not number ")
     }
     
-}else{
-    console.log("not number")
+
 }
-
-
 
     </script>
 </html> 
