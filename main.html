@@ -8,7 +8,7 @@
     </title>
 </head>
 <body>
-    
+
 </body>
 <script>
     //welcom Java Script
@@ -497,8 +497,9 @@ let myLang = ["html","css","JS","php"]
  console.log(myLang) //['html', 'css', 'JS', 'php']
  console.log(last)
  
-*/
+
  let myLang = ["html","css","JS","php","python",".net"]
+
  //slice array
  //console.log(myLang.slice())  //
  //console.log(myLang.slice(1))//
@@ -514,8 +515,509 @@ let myLang = ["html","css","JS","php"]
  //console.log(myLang.splice(2,2)) // ['JS', 'php']
  //console.log(myLang.splice("js")) //['html', 'css', 'JS', 'php', 'python', '.net']
  //console.log(myLang.splice(-2,2))  //['python', '.net']
+ 
+//searh in array  
+console.log (myLang.indexOf("JS"));  //2
+console.log (myLang.indexOf("js"));   //-1
+console.log (myLang.indexOf("JS",1));  //2
+
+console.log (myLang.lastIndexOf("JS"));
+console.log (myLang.lastIndexOf("JS",3));
+console.log (myLang.lastIndexOf("JS",-1));
+
+console.log (myLang.includes("JS"));  //true
+console.log (myLang.includes("js"));  //false
+
+
+let myLang = ["html","css",100,9,"JS","php","python",".net",99]
+let myLang2 = ["html","css",100,9,"JS","php","python",".net",99]
+ 
+ //console.log(myLang.sort())
+ //console.log(myLang.reverse())
+ //console.log(myLang.sort().reverse())
+ console.log(myLang.concat(myLang2,"all"))  //mylang+mylang2+"all"
+ console.log(myLang.join())
+ console.log(myLang.join(myLang2,"all"))
+
+ //challenage-------------------
+
+let zero=0
+let couner=3
+let my=["Ahmed","Mazero","Elham","Osama","Gamal","Ameer"]
+
+console.log(my.concat("pluse").reverse().slice(couner)) //['Osama', 'Elham', 'Mazero', 'Ahmed']
+
+console.log(my.slice(my.indexOf("Mazero"),couner).reverse())
+
+console.log(my[my.indexOf("Elham")].substring(zero,my.indexOf("Elham")) + my[my.indexOf("Mazero")].substring(my.indexOf("Elham")))
+
+ 
+// -------------------
+//-----Loop-------------
+//---------------------
+let my=["Ahmed","Mazero","Elham","Osama","Gamal","Ameer"]
+
+for (let index = 0; index <my.length; index++) {
+  console.log(my[index])
+  
+}
+
+
+let my=["Ahmed","Mazero",1,2,"Elham","Osama","Gamal",2,"Ameer"]
+let na =jjjkit85
+let only=[]
+
+for (i = 0; i < my.length; i++){
+  if (typeof my[i]==="string"){
+  console.log(my[i])
+  }
+}
+--------------------------------------
+-------------function ----------------
+-------------------------------------
+
+
+function hallo(a) {
+  console.log(`hallo ${a}`)
+}
+hallo("good")
+
+
+function yearfn (start,end,ex){
+ for (let i = start ; i < end ; i++) {
+  if (i===ex){
+    continue;
+  }
+  console.log(i)
+   
+ }}
+ yearfn(1,10,2)
+
+
+function gennum(n1,n2,n3){
+
+//  if (!Number.isInteger(n1)){
+ //   n1=1;
+//  }
+n3 = n3 || 5
+  for (i=n1;i<n2 ;i++){
+    console.log(i);
+    if (i==n3){
+      return "incrapt"
+    }
+  }
+}
+gennum(1,10);
+
+//count number  array -------
+function restpar(...num) {
+  let ret = 0
+
+  for (let i = 0; i < num.length; i++) {
+     ret +=num[i]
+    
+  }
+  return ret;
+}
+console.log(restpar(20,30,40,50))
 
 
  
+function showDetails(par1,par2,par3) {
+
+  let nam
+  let age
+
+  if (typeof(par1)=="string" && typeof(par2)=="number" ){
+
+    nam = par1 
+    age = par2
+    bool = par3
+
+  }else if(typeof(par1)=="number" && typeof(par2)=="string" )
+  {
+    age = par1 
+    nam = par2
+    bool = par3
+    
+
+  }else if(typeof(par1)=="boolean" && typeof(par2)=="number" ){
+
+    bool = par1
+    age = par2
+    nam = par3
+
+  }else if(typeof(par1)=="string" && typeof(par2)=="boolean" ){
+
+    nam = par1
+    bool = par2
+    age = par3
+    
+
+}else if(typeof(par1)=="number" && typeof(par2)=="boolean" ){
+
+nam = par3
+age = par1
+bool = par2
+
+}else if(typeof(par1)=="boolean" && typeof(par2)=="string" ){
+
+bool = par1
+age = par3
+nam = par2
+
+}
+  console.log (`hello ${nam} my age ${age} my ${bool}`)
+}
+
+
+
+ showDetails("well",22,true)
+ showDetails(11,"osama",false)
+ showDetails(false,"ooo",11)
+ showDetails(11,false,"oaadc")
+showDetails(false,11,"ovdv")
+showDetails("ssss",false,255)
+
+
+//anonymous funcation-----------------
+
+let nameFuncation = function(params) {
+  console.log(params);
+}
+nameFuncation("osama")
+//--------------------------------
+
+setTimeout(function(name = "hallo"){
+  console.log (`${name}`)
+},2000)
+
+//Nested function -----------------
+//Ex1--------
+function saymassage(name,age) {
+  let massage = "hallo"
+  
+  function fullMassge() {
+
+    console.log(`${massage} ${name} your age ${age}`)
+  }
+  fullMassge()
+  
+}
+saymassage("osama",22)
+
+//Ex2---------
+function saymassage(name,age) {
+  let massage = "hallo"
+  
+  function fullMassge() {
+
+    return(`${massage} ${name} your age ${age}`)
+  }
+ return fullMassge()
+  
+}
+console.log( saymassage("osama",22))
+
+//Ex3------
+
+function saymassage(name,age) {
+  let massage = "hallo"
+  
+  function fullMassge() {
+
+    function fullname() {
+      return `${name} your age ${age}`
+    }
+
+    return `${massage} ${fullname()}`
+  }
+
+ return fullMassge()
+  
+}
+console.log( saymassage("osama",22))
+
+
+
+//Arrow Function ---------------------------
+
+let fullName = ()=>{
+   return `osama` 
+  }
+console.log(fullName());
+-----------------
+
+let fullName = _ =>{
+   return `osama` 
+  }
+console.log(fullName());
+-----------------------
+let v = _ => 9 ;
+console.log(v());
+-----------------
+let fullName = (name)=>{
+   return name
+  }
+console.log(fullName("osama"));
+-------------------
+let fullName = name => name;
+  
+console.log(fullName("osama"));
+-----------------
+
+let calc = (num1,num2) => num1+num2;
+console.log(calc(100,5))
+-------------------------------------------
+function scope (global-local)
+
+//global scope ----
+var a=1            
+let b=2
+
+let scope = () => {
+  //function scope ----
+
+  var a=10            
+  let b=20
+
+  console.log ( `function  ${a}`)   
+  console.log ( `function ${b}`)
+
+}
+
+console.log ( `global ${a}`)
+console.log ( `global ${b}`)
+scope()
+
+var x =22
+if (true){
+  var x= 55    //var not block scope
+}
+console.log(x) //55
+//---------------------------
+let z =22
+if (true){
+  let z= 55   //block scope
+}
+console.log(z) //22
+
+let a =0    // global scope 
+
+  function parent(){    //scope leyer 1
+    let a = 10       
+
+      function child(){    //scope leyer 2
+    let a= 20 
+      let b=40             
+        console.log(a) //20
+            function grand (){  //scope leyer 3
+              let a=30
+              console.log(a)  //30
+              console.log(b)  //40
+            }
+
+      grand()
+      
+      }
+
+  child()
+  console.log (a)//10
+  }
+ 
+parent()
+
+//challange Function --------------
+
+let names = function(...num){
+  
+  return("[" + num.join("],[")+ "] = > Done")
+
+}
+
+console.log(names("osama","mohamed","ali","ahmed"))
+ 
+
+let names =(...num)=>{return`[${num.join("],[")}]=> Done`}
+  A   
+console.log(names("osama","mohamed","ali","ahmed","ibrahem"))
+
+// challange 2
+let nums = [20,50,10,60]
+ let calc =(one,two,...num) =>{
+  let el =0
+ for (let i = 0; i < num.length; i++) {
+   el += num[i];
+  
+ }
+  return one+two+ el 
+}
+ console.log(calc(10,nums[0],nums[1]))
+*************************************************
+**         higher order funation               **
+*************************************************
+
+let num = [1,2,3,4,5,6]
+
+  function calc (){
+    for (let i = 0; i < num.length; i++) {
+       elem = num[i]+num[i];
+       console.log(elem)
+    }
+  }
+  calc()
+-----------------------------------
+  let num = [1,2,3,4,5,6]
+  let addelem = num.map((n,i,ar)=>{
+return n+n;
+  },10)
+console.log (addelem)
+----------------------------------------------
+let ignoreNum="El12Z2Er0o0o"
+
+let fumMap = ignoreNum.split("").map(function(ele){
+  return isNaN(parseInt(ele))  ?ele:''
+}).join("")
+----------------------------------------------------
+
+let ignoreNum="El12Z2Er0o0o"
+let fumMap = ignoreNum.split("").map(ele =>isNaN(parseInt(ele))?ele:'').join("")
+console.log(fumMap)
+----------------------------------
+
+let ttt = function (ch="El12Z2Er0o0o") {
+  arr = ch.split("")
+ 
+     for (let i = 0; i < arr.length; i++) {
+     ele = arr[i];
+     let fele = isNaN(parseInt(ele))? ele : ""
+     console.log (fele = fele+fele ) 
+  }
+}() 
+--------------------------------
+filter
+-----------------------------
+ Map Vs Filter
+let Num = [1,2,3,4,5,6]
+//-----------------------------
+let calcNum= Num.map(function (params) {
+ return params+params
+})
+console.log(calcNum)
+//-----------------------------------------------
+let calcNum2 = Num.filter(function (params) {
+ return params+params
+})
+console.log(calcNum2)
+//-----------------------------------------------------
+let calcNum3 = Num.filter(function (params) {
+ return params %2 ===0 ?true:false
+})
+console.log(calcNum3)
+//----------------------------------------------------------
+ let friends = ["ahmed","ali","bahana","hahenda"]
+
+let fetFriend = friends.filter( function(params) {
+  return params.startsWith("a")
+})
+ console.log(fetFriend )
+ -------------------------------------------------------
+let word="i love Fooood code JS toooo "
+
+ let ignoreWord = word.split(" ").filter(function(ele){
+   return ele.length <= 4 
+ }).join(" ")
+console.log(ignoreWord)
+--------------------------------------------
+
+
+ let mix = "a13bs2zx"
+
+ let igNum = mix.split("").filter(function(ele){
+   return  ele = !isNaN(parseInt(ele))
+ }) .map((ele)=> ele *ele).join("")
+ console.log(igNum)
+
+//------------------------------------------------
+//reduce
+//------------------------------------------------
+let num=[10,20,30,40,50]
+let  add = num.reduce(function(acc,cur,ind,arr){
+ console.log (acc)
+ console.log (cur)
+ console.log (ind)
+ console.log (arr)
+ console.log (acc+cur)
+ return acc+cur
+
+},5)
+console.log (add)
+--------------------------------------------
+
+
+let  word = ["ali","ahmed","ibrahem","mai","aya"]
+
+let bigword = word.reduce(function(acc,cur){
+  console.log(acc)
+  console.log(cur)
+console.log("-----------")
+return acc.length > cur.length ? acc:cur
+})
+console.log(bigword)
+--------------------------------------------------
+
+let  word = ["E","@","L","Z","@","E","@","RO"]
+
+let bigword = word.filter(function(acc){
+return !acc.startsWith("@")
+}).reduce(function(acc,acr){
+  return acc+acr
+})
+console.log(bigword)
+
+
+//-------------------------
+//    forEach
+//-------------------------
+-----includ Html-----
+  <ul>
+    <li>one</li>
+    <li>two</li>
+    <li>three</li>
+  </ul>
+    <div>one</div>
+    <div>two</div>
+    <div>three</div>
+----------------------------------
+let allele= document.querySelectorAll("ul li")
+
+allele.forEach(function (ele) {
+
+ ele.onclick=function(){
+
+  allele.forEach(function(ele){
+    ele.classList.remove("active")
+  })
+
+ this.classList.add("active")
+ }
+})
+
+*/
+let mystring ="1,2,3,EE,l,z,e,r,o,_,w,e,b,_,s,c,h,o,o,l,2,0,z"
+ 
+
+solution = mystring.split(",").filter(function (ele) {
+  return  ele = isNaN(parseInt(ele)) 
+
+}).map(function (ele,idx) {
+
+    return ele.replace("_"," ") 
+ 
+}).reduce(function(acc,acr){
+  return acc+acr
+}).trim("E")
+console.log(solution)
 </script>
 </html> 
+
