@@ -1003,7 +1003,7 @@ allele.forEach(function (ele) {
  }
 })
 
-*/
+\*
 let mystring ="1,2,3,EE,l,z,e,r,o,_,w,e,b,_,s,c,h,o,o,l,2,0,z"
  
 
@@ -1018,6 +1018,351 @@ solution = mystring.split(",").filter(function (ele) {
   return acc+acr
 }).trim("E")
 console.log(solution)
+
+//***********************************
+//***      Object                 ***
+//***********************************
+
+
+let  myvar="country of" 
+
+ let user ={
+  //properties 
+   name:"osama",
+   age :35,
+   "country of" :"Egypt",
+  //motheds 
+   sayhallo :function(){
+    return("hallo")
+  }
+ }
+ console.log(user.name)  //osama
+ console.log(user.age)   //35
+console.log(user["country of"])//bracket notation -->Egypt
+//dynamic propratis 
+console.log(user.myvar) //undefined
+console.log(user[myvar])  //Egypt
+//-----------
+//nested object 
+
+let available = "yes"
+let user ={
+  name:"osama",
+  age:55,
+  skills:["htmal","css","Js"],
+  addresses:{
+    egypt:{
+      one:"cairo",
+      two:"giza"
+    },
+    sydia:"riydh",
+  },
+
+  checkadd:function () {
+    if (available==="no"){
+      return user.addresses.egypt.one
+    }else{
+      return user.addresses.sydia 
+    }
+    
+  }
+
+}
+console.log(user.skills[2])//Js
+console.log(user.addresses.egypt.one)//cairo
+console.log(user["addresses"].egypt.one)
+console.log(user.checkadd())//riydh
+//---------------------------------------
+user.code = "Js code"
+user["code 1"] = "Js code 1"
+user.addcode = function () {
+  return "hallo"
+}
+
+console.log(user)
+//--------------------------------------
+let user2 = new Object({})
+user2.age = 22
+
+console.log(user2)
+//-----------------------------------------
+console.log(this)  //window
+
+myvar = window
+myvar = 100
+console.log (this.myvar)
+
+//-------------------
+function mythis() {
+  console.log(this)
+}
+mythis()  //window
+
+//---------------
+let ageUser =  {
+  age : 22,
+ ageClu : function () {
+  return this.age*365
+}
+}
+console.log (this)//ageUser
+console.log (ageUser.age)//22
+console.log (ageUser.ageClu())//8030
+
+//---------------------------
+let ob =Object.create({})
+
+ob.age = 22
+console.log(ob) //{age:22}
+//-----------------------------------
+
+let ageUser =  {
+  age : 22,
+ ageClu : function () {
+  return this.age*2
+}
+}
+console.log(ageUser) 
+console.log(ageUser.age) //22
+console.log(ageUser.ageClu())
+
+let obj = Object.create(ageUser)
+
+ obj.age = 50;
+
+console.log(obj)
+console.log(obj.age)
+console.log(obj.ageClu())
+
+let obj1 ={
+pro1 :1,
+pro2 :2
+}
+let obj2 ={
+  pro12 :1, 
+  pro22 :2
+}
+let obj3 ={
+  pro13 :1 , 
+  pro2:2
+}
+
+let allObj = Object.assign(obj1,obj2,obj3)
+console.log (allObj)
+
+let finalObj = Object.assign({},obj3,{pro15:15,pro16:16})
+console.log (finalObj)
+
+//-------------------------------
+//              DOM--
+//--------------------------------------
+*/
+</Script>
+<!--<div id="my-dev">
+  <h1>
+ Hallo my DOM
+  </h1>
+  <p class="my-p" style="background-color:rgb(84, 84, 196);">
+    <span>
+       wallcome form my spam 1
+    </span>
+  </p>
+  <p>
+    <span class="my-span">
+       wolcome form my spam <span> &lt;span&gt;</span>
+    </span>
+  </p>
+  <a href="www.google.com">google</a>
+
+  <form class ="my-form" title="" >
+    <input type="text" name="one" value="input">
+    <img alt="">
+    
+  </form>
+</div>-->
+  <Script>
+
+/*
+ let mydoc = document.getElementById("my-dev")
+ let myspan = document.getElementsByTagName("span")
+ let myp  = document.getElementsByClassName("my-p") 
+ let myquery = document.querySelector(".my-span")
+ let myallquery = document.querySelectorAll("p")
+
+ //console
+console.log(mydoc)
+console.log(myspan[1])
+console.log(myp[0])
+console.log(myquery)
+console.log(myallquery)
+//-----------
+console.log(document.title)
+console.log(document.body)
+console.log(document.forms[0].one.value)
+console.log(document.links[0])
+
+//--------------------------------------
+//    Get-set elements  
+ //get -------------
+
+  let myele  = document.querySelector(".my-span")
+
+ // console.log(myele.innerHTML)
+  //console.log(myele.textContent)
+
+//myele.innerHTML = "wellcom from <span>Js</span>"
+//myele.textContent = "wellcom from <span>Js</span>"
+console.log(myele)
+
+let myele2 = document.querySelector(".my-form")
+
+console.log(myele2.getAttribute("class"))
+//set -------------
+// document.images[0].src ="https://google.com"
+ //document.images[0].title ="google"
+ //document.links[0].href = "https://www.facebook.com"
+console.log(myele2.setAttribute("id","my-idform"))
+
+//------------------------------
+// attributes
+
+console.log(document.getElementsByTagName("form")[0].attributes)
+
+let myform = document.getElementsByTagName("form")[0]
+
+
+if (myform.hasAttribute("title")){
+
+  if (myform.getAttribute("title")===" "){
+  myform.removeAttribute("title")
+}else{
+  myform.setAttribute("title","my-form")
+}
+
+}else{
+  console.log("not found")
+}
+
+
+
+myp= document.getElementsByTagName("p")
+
+
+if (myp.hasAttribute("p")){
+
+  if (myp.getAttribute("title")===" "){
+  myp.removeAttribute("title")
+}else{
+  myp.setAttribute("title","my-form")
+}
+
+}
+
+let myE = document.createElement("div")  //create element
+myE.className="prodact"              //add class css
+
+//1- create attrubite element 
+let myat =document.createAttribute("date")
+myE.setAttributeNode(myat) //join attrubite element 
+
+//2- set attribut
+myE.setAttribute("style","color:red")
+
+
+//create text in element 
+let mytext =document.createTextNode("input Text")
+myE.appendChild(mytext)  //append text 
+
+
+//create comment 
+mycomm =document.createComment("this is comment")
+myE.appendChild(mycomm) //join comment element 
+
+
+//append element in body
+document.body.appendChild(myE)
+---------------------------------
+exampel to create element prodact 
+---------------------------------
+
+//for (let i = 1; i < 101; i++) {}
+//create elements 
+let myelemDiv = document.createElement("div")
+let myelembu = document.createElement("button")
+let myelemH = document.createElement("h3")
+let myelemP = document.createElement("p")
+let mycomm =document.createComment("this is comment")
+let myeleminput = document.createElement("input")
+let myelemInputBu = document.createElement("input")
+
+//create attrbite elements
+let myattr1 = document.createAttribute("date")
+//let myattr2 = document.createAttribute("style")
+
+//create class elements
+myelemDiv.className ="main-div"
+myelemH.className ="prodact"
+myelemP.className ="p-prodact"
+
+//create data let myelemDiv = document.createElement("div")
+let myData=document.createTextNode("prodact ")
+let myData2=document.createTextNode("detiles prodact")
+let myData3=document.createTextNode("click")
+
+//set attribute
+//myelembu.setAttributeNode(myattr2)
+myelembu.setAttribute("onclick","console.log('clickd')")
+myeleminput.setAttribute("placeholder","input 1")
+myelemInputBu.setAttribute("type","button")
+
+
+
+
+//append text 
+myelemH.appendChild(myData)
+myelemP.appendChild(myData2)
+myelembu.appendChild(myData3)
+
+
+
+//appind element 
+document.body.appendChild(myelemDiv)
+myelemDiv.appendChild(myelemH)
+myelemDiv.appendChild(myelemP)
+myelemDiv.appendChild(mycomm) //join comment element 
+myelemDiv.appendChild(myeleminput)
+myelemDiv.appendChild(myelembu)
+myelemDiv.appendChild(myelemInputBu)
+
+
+//event DOM------
+myeleminput.onmouseenter = function () {
+  console.log("foucas")
+}
+
+myeleminput.onmouseenter = function () {
+  console.log("foucas")
+}
+ 
+
+//--resalat ---
+<div class="main-div">
+  
+    <h3 class="prodact">prodact </h3>
+   <p class="p-prodact">detiles prodact</p>
+   <!--this is comment -->
+ </div> 
+
+
+let myele = document.querySelector("div")
+
+console.log(myele)
+console.log(myele.children[0])
+console.log(myele.childNodes[2])
+console.log(myele.firstChild)
+console.log(myele.lastChild)
+*/
+
 </script>
 </html> 
 
