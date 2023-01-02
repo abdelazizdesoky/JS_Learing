@@ -1361,7 +1361,156 @@ console.log(myele.children[0])
 console.log(myele.childNodes[2])
 console.log(myele.firstChild)
 console.log(myele.lastChild)
+
+myelemDiv.before("hallo from befor")
+myelemDiv.after("hallo from after")
+myelemDiv.append("hallo from append")
+myelemDiv.prepend("hallo from prapend")
+//myelemDiv.remove() //remove div
+
+// DOM travel-----------------
+console.log(myelemH.nextSibling)
+console.log(myelemH.nextElementSibling)
+console.log(myelemP.previousSibling)
+console.log(myelemH.parentElement)
+
+myelemH.onclick = function () {
+  myelemform.remove()
+}
+
+mydivClone = myelemDiv.cloneNode(true)  // clone 
+ 
+myelemDiv.after(mydivClone)
+
+// addEventListener-------
+
+myelemP.onclick = one
+myelemP.onclick = two
+
+ function one  (){
+  console.log ("clik one")
+}
+ function two  (){
+  console.log ("clik two")
+}
+
+myelemP.addEventListener ("click",function () {
+  console.log("from event")
+})
+
+//myelemH.addEventListener ("click","string") error 
+
+
+myelemP.onclick = function () {
+  let clon = myelemH.cloneNode(true)
+  clon.className = "colne"
+  document.body.appendChild(clon)
+}
+//cloand.document.querySelector(".colne")
+ //cloand.onclick = function () {
+ // console.log("coland")}
+
+document.addEventListener("click",function (e) {
+  if (e.target.className === "colne"){
+    console.log("iam colaned ")
+  }
+})
+
+
+//****** DOM callange **********
+
+
+
+ 
+let header=document.createElement("header");
+header.style.cssText="padding:20px; background-color:grey;color:white;display:flex;justify-content:space-between;"
+
+
+let logo=document.createElement("div");
+let logoText=document.createTextNode("ELZERO");
+logo.style.cssText="color:green; font-size:20px; font-weight:bold;"
+
+
+
+let menu=document.createElement("ul");
+menu.style.cssText="display:flex;list-style-type:none;padding:0px;margin:0px";
+
+let li1=document.createElement("li");
+let li1Text=document.createTextNode("Home");
+li1.style.cssText="margin-right:10px";
+
+
+let li2=document.createElement("li");
+let li2Text=document.createTextNode("About");
+li2.style.cssText="margin-right:10px";
+
+let li3=document.createElement("li");
+let li3Text=document.createTextNode("Services");
+li3.style.cssText="margin-right:10px";
+
+
+let li4=document.createElement("li");
+let li4Text=document.createTextNode("Contact");
+li4.style.cssText="margin-right:10px";
+
+li1.appendChild(li1Text);
+li2.appendChild(li2Text);
+li3.appendChild(li3Text);
+li4.appendChild(li4Text);
+menu.appendChild(li1);
+menu.appendChild(li2);
+menu.appendChild(li3);
+menu.appendChild(li4);
+
+logo.appendChild(logoText);
+header.appendChild(logo);
+header.appendChild(menu);
+document.body.appendChild(header);
+ 
+
+
+//content
+
+let content=document.createElement("div");
+content.style.cssText="background-color:#eeeeee;display:flex;box-sizing:border-box;flex-wrap:wrap;gap:2px;justify-content:center;";
+
+
+for(let i=1;i<=15;i++)
+{
+  let product=document.createElement("div");
+  product.style.cssText="padding:20px; color:black; border:1px solid black; background-color:#bcbcbc;margin-top:8px;width: calc((100% - 200px) / 3);text-align:center;"
+
+  let num=document.createElement("span");
+  let number=document.createTextNode(`${i}`);
+  num.style.cssText="color:white;font-weight:bold;font-size:30px";
+  
+  let pargh=document.createElement("p");
+  let parghText=document.createTextNode("Product");
+  pargh.style.cssText="color:grey;"
+
+  num.appendChild(number);
+  pargh.appendChild(parghText);
+  product.appendChild(num);
+  product.appendChild(pargh)
+  content.appendChild(product);
+}
+
+
+document.body.appendChild(content)
+
+
+//footer
+
+let footer=document.createElement("footer");
+let footerText=document.createTextNode("Copyright 2022");
+footer.style.cssText="padding:20px; margin-top:10px; text-align:center; color:white; background-color:green; font-weight:bold;";
+
+footer.appendChild(footerText);
+document.body.appendChild(footer);
 */
+
+
+
 
 </script>
 </html> 
