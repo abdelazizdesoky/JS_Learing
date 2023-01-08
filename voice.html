@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>voice</title>
+    <style>
+        div{
+            
+            display: grid;
+            place-items:center;
+            background-color: dodgerblue;
+            color: #fff;
+            padding: 1rem;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+    <h3>Input You Word to Voice</h3>
+    <input  type="text">
+    <br>
+    <button>Voice</button>
+    </div>
+    <script>
+
+         let myWord = document.querySelector("input")
+         let wordClick = document.querySelector("button")
+        //target button
+         wordClick.onclick = function () {
+            let myVoice = new SpeechSynthesisUtterance(myWord.value)
+            speechSynthesis.speak(myVoice)
+         }
+            
+            
+       
+         
+    </script>
+</body>
+</html>
